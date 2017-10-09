@@ -1,0 +1,33 @@
+이클립스 환경설정
+
+1. C:\ 하위에 통합폴더 생성1
+
+2. 생성한 하위폴더에 jdk, tomcat, eclipse, maven 설치하고 workspace 폴더 생성
+
+3. eclipse 폴더의 eclipse.ini 파일 수정, vmargs 위쪽 아무데나
+	-vm
+	C:\통합폴더\jdk폴더\bin\javaw.exe 추가
+
+	-Xms1024, -Xmx2048 로 수정
+
+4. 톰캣 설정
+	- 이클립스 Window > Preferences > Server > Runtime Env
+	add > 설치한 톰캣버전선택, Next > 톰캣설치경로 잡고
+	설치한 jdk버전 선택 > Finish
+
+5. Maven 설정
+	- 메이븐폴더 하위에 repository 폴더 생성
+	- C:\통합폴더\메이븐폴더\conf 에 있는 setting.xml 수정
+	- localRepository 찾아서 주석제거하고 <localRepository>	</localRepository>사이에 있는 경로에
+	생성한 repository 경로 설정해준다
+	- 이클립스 Window > Preference > Maven > User Settings >
+	Browse 눌러 setting.xml 파일 선택 > 확인
+
+6. SVN 예외소스 추가하기
+	Window > Preferences > Team > Ignored Resources >
+	add pattern 눌러 */target/* 추가
+
+7. STS 설치
+	- eclipse > help > Eclipse Marketplace
+	- STS 검색
+	- 이클립스 버전에 맞는것 선택후 설치
